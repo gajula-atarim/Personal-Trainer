@@ -439,7 +439,7 @@ def faq():
 
 # ---------------------------------------------------------------- final CTA
 def cta():
-    box = anim(con([
+    copy = con([
         eyebrow('09 · Your move'),
         heading('Stop wishing.<br><span class="gf-lime">Start training.</span>', 'h2', WHITE,
                 typo('Archivo', custom('clamp(44px, 6vw, 80px)'), 800, 0.98, -0.035), margin=mt(20)),
@@ -447,9 +447,15 @@ def cta():
              typo('Hanken Grotesk', 18, 400, 1.6), margin=mt(24), extra={'_element_width': 'initial', '_element_custom_width': px(480), '_element_width_mobile': 'inherit'}),
         button('Book a free trial →', '#book', 'primary', 'xl', margin=mt(32)),
         heading('Only 6 trial slots left this week', 'div', SOFT, typo('Hanken Grotesk', 14, 400, 1.4), margin=mt(18)),
-    ], merge(card_bg(25, 'getfit-cta-scaled.jpg', 90, 'rgba(10,26,26,0.95)', 0, 'rgba(10,26,26,0.2)', 100),
-             {'min_height': px(520), 'flex_justify_content': 'center', 'padding': dims(72, 56), 'padding_mobile': dims(48, 24),
-              'border_radius': dims(32), 'overflow': 'hidden'}), cls='gf-cta', title='Final call to action'), 0, 'zoomIn')
+    ], {'width': px(37, '%'), 'width_tablet': px(48, '%'), 'width_mobile': px(100, '%'),
+        'padding': dims(72, 56), 'padding_tablet': dims(56, 40), 'padding_mobile': dims(40, 24, 48, 24)},
+        cls='gf-cta-copy', title='CTA text')
+    box = anim(row([
+        image(25, 'getfit-cta-scaled.jpg', 'gf-cta-img', 'large', alt='Coach reviewing a client’s progress on a laptop'),
+        copy,
+    ], {'min_height': px(520), 'min_height_mobile': px(0), 'flex_align_items': 'center', 'flex_wrap': 'nowrap',
+        'flex_direction_mobile': 'column', 'flex_gap': gap(0), 'border_radius': dims(32), 'overflow': 'hidden'},
+        cls='gf-cta', title='Final call to action'), 0, 'zoomIn')
     return section([box], title='Final CTA', pad=(0, 32, 100, 32))
 
 

@@ -274,3 +274,15 @@ body.getfit .gf-backtotop .elementor-heading-title a:hover { color: var(--gf-lim
 .gf-counter .elementor-counter-title { order: 2; }
 .gf-faq .e-n-accordion-item > .e-con,
 .gf-faq .e-n-accordion-item > [role="region"] { border: 0 !important; background: transparent !important; }
+
+/* ---------- final CTA: photo left, copy right (as in the design), stacked on phones */
+.gf-cta { position: relative; isolation: isolate; }
+.gf-cta::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(10, 26, 26, .95) 0%, rgba(10, 26, 26, .7) 55%, rgba(10, 26, 26, .2) 100%); }
+.gf-cta-img { flex: 1 1 0 !important; min-width: 0; align-self: center; }
+.gf-cta-img img { width: 100% !important; aspect-ratio: 3 / 2; height: auto !important; object-fit: cover; display: block; }
+.gf-cta-copy { position: relative; z-index: 2; flex: 0 0 auto !important; }
+@media (max-width: 767px) {
+	.gf-cta { background: var(--gf-ink); }
+	.gf-cta::after { background: linear-gradient(180deg, rgba(10, 26, 26, .2) 0%, rgba(10, 26, 26, .55) 30%, rgba(10, 26, 26, 0) 45%); }
+	.gf-cta-img { flex: 0 0 auto !important; width: 100% !important; }
+}

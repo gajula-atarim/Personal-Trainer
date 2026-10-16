@@ -328,9 +328,19 @@
 		});
 	}
 
+	/* Mobile menu (UAE): close the dropdown after tapping a same-page link. */
+	function mobileMenu() {
+		document.addEventListener('click', function (e) {
+			if (!e.target.closest('.gf-nav nav.hfe-dropdown a')) return;
+			var toggle = $('.gf-nav .hfe-nav-menu__toggle');
+			if (toggle && toggle.classList.contains('hfe-active-menu')) toggle.click();
+		});
+	}
+
 	function init() {
 		if (inEditor()) return;
 		header();
+		mobileMenu();
 		hero();
 		method();
 		marquee();

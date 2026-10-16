@@ -44,9 +44,9 @@ def footer():
     top = row([
         con([heading('Ready when you are.', 'h2', WHITE, typo('Archivo', custom('clamp(32px, 4vw, 52px)'), 800, 1.02, -0.03)),
              text('<p>Your first session is free. No contract, no pressure.</p>', MUTED, typo('Hanken Grotesk', 16, 400, 1.6), margin=mt(12))],
-            title='CTA text'),
+            cls='gf-grow-auto', title='CTA text'),
         row([button('Book a free trial →', '/#book', 'primary', 'md'),
-             button('Call +358 40 123 4567', 'tel:+358401234567', 'ghost', 'mdc')], {'flex_gap': gap(12)}),
+             button('Call +358 40 123 4567', 'tel:+358401234567', 'ghost', 'mdc')], {'flex_gap': gap(12)}, cls='gf-auto'),
     ], {'flex_justify_content': 'space-between', 'flex_align_items': 'flex-end', 'flex_gap': gap(32), 'padding': dims(0, 0, 48, 0),
         'border_border': 'solid', 'border_width': dims(0, 0, 1, 0), 'border_color': 'rgba(255,255,255,0.1)'}, title='Footer CTA')
     social = w('social-icons', {
@@ -83,7 +83,7 @@ def footer():
             heading('Privacy', 'div', MUTED, typo('Hanken Grotesk', 13, 400, 1.5), link='/privacy-policy/', cls='gf-flink'),
             heading('Terms', 'div', MUTED, typo('Hanken Grotesk', 13, 400, 1.5), link='#top', cls='gf-flink'),
             heading('Back to top <span class="gf-totop">↑</span>', 'div', WHITE, typo('Hanken Grotesk', 13, 600, 1.5), link='#top', cls='gf-backtotop'),
-        ], {'flex_gap': gap(24), 'flex_align_items': 'center'}),
+        ], {'flex_gap': gap(24), 'flex_align_items': 'center'}, cls='gf-auto'),
     ], {'flex_justify_content': 'space-between', 'flex_align_items': 'center', 'flex_gap': gap(16), 'padding': dims(22, 0),
         'border_border': 'solid', 'border_width': dims(1, 0, 0, 0), 'border_color': 'rgba(255,255,255,0.1)'}, title='Footer bottom')
     card = con([top, cols, bottom], {'padding': dims(56, 48, 0, 48), 'padding_mobile': dims(40, 24, 0, 24), 'border_radius': dims(32),

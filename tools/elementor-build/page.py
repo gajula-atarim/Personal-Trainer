@@ -81,10 +81,10 @@ def hero():
     for i, t in enumerate(['Strength', 'Weight loss', 'Online coaching']):
         tabs.append(heading('0%d · %s' % (i + 1, t), 'div', MUTED2,
                             typo('Hanken Grotesk', 13, 700, 1.25, 0.12, 'uppercase'), cls='gf-hero-tab' + (' is-active' if i == 0 else '')))
-    tabbar = grid(tabs, 3, (12, 24), 3, 3, {'padding': dims(0, 32, 40, 32), 'padding_mobile': dims(0, 20, 32, 20),
+    tabbar = grid(tabs, 3, (12, 24), 3, 3, {'padding': dims(0, 0, 40, 0), 'padding_mobile': dims(0, 0, 32, 0),
                                             'grid_gaps_mobile': {'column': '12', 'row': '12', 'isLinked': True, 'unit': 'px'}},
                   cls='gf-hero-tabs', title='Slide tabs')
-    tabwrap = con([tabbar], {'content_width': 'boxed', 'boxed_width': px(1176)}, cls='gf-hero-tabwrap', title='Slide tabs')
+    tabwrap = con([tabbar], {'content_width': 'boxed', 'boxed_width': px(1176), 'padding': dims(0, 32), 'padding_mobile': dims(0, 20)}, cls='gf-hero-tabwrap', title='Slide tabs')
     return con(slides + [tabwrap], {'content_width': 'full', 'min_height': HERO_MIN, 'flex_gap': gap(0),
                                     'overflow': 'hidden', 'background_background': 'classic', 'background_color': INK,
                                     'html_tag': 'section', '_element_id': 'top'},
@@ -209,7 +209,7 @@ def programs():
         con([eyebrow('03 · Choose your path'), h2('One goal. The right programme for it.', maxw=720)], cls='gf-grow-auto'),
         button('Not sure? Ask in your free trial', '#book', 'ghost', 'mdo'),
     ], {'flex_justify_content': 'space-between', 'flex_align_items': 'flex-end', 'flex_gap': gap(24)}))
-    return section([head, grid(cards, 3, (20, 20), 1, 1, {'margin': mt_dims(56)})], sid='programs', title='Programmes', pad=(40, 32, 140, 32))
+    return section([head, grid(cards, 3, (20, 20), 2, 1, {'margin': mt_dims(56)})], sid='programs', title='Programmes', pad=(40, 32, 140, 32))
 
 
 # ---------------------------------------------------------------- results
@@ -260,7 +260,7 @@ def results():
         anim(con([eyebrow('04 · The proof', 'center'), h2('Real people. Busy lives. Results that last.', 'center')],
                  {'flex_align_items': 'center'}, cls='gf-head')),
         anim(stats),
-        grid(cards, 3, (20, 20), 1, 1, {'margin': mt_dims(20)}),
+        grid(cards, 3, (20, 20), 2, 1, {'margin': mt_dims(20)}),
     ], {'content_width': 'boxed', 'boxed_width': px(1176), 'padding': dims(0, 32), 'padding_mobile': dims(0, 20)}, title='Results')
     return con([inner, marquee], {'content_width': 'full', 'html_tag': 'section', '_element_id': 'results',
                                   'padding': dims(40, 0, 140, 0), 'padding_mobile': dims(28, 0, 98, 0)},

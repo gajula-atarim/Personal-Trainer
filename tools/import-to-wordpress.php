@@ -9,8 +9,8 @@
  *  - merges kit.json into the active Elementor kit (global colours, fonts, layout),
  *  - creates/updates the UAE header and footer templates (display: entire site),
  *  - creates/updates the "Home" page and makes it the static front page,
- *  - stores the design CSS/JS in the getfit_css / getfit_js options, which the
- *    child theme serves until `wp getfit export-assets` writes them to files,
+ *  - stores the design CSS/JS in the getfit_css / getfit_js options and writes
+ *    them to the child theme's assets/ folder,
  *  - clears Elementor's generated CSS so everything is rebuilt.
  *
  * Safe to run repeatedly: posts are matched by slug and updated in place.
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$getfit_ref  = isset( $args[0] ) ? $args[0] : 'claude/admiring-tesla-goowtl';
+$getfit_ref  = isset( $args[0] ) ? $args[0] : 'claude/admiring-tesla-goowtl'; // pass a commit SHA to bypass GitHub's raw CDN cache
 $getfit_base = 'https://raw.githubusercontent.com/gajula-atarim/Personal-Trainer/' . $getfit_ref . '/';
 
 $getfit_get = function ( $path ) use ( $getfit_base ) {
@@ -124,9 +124,17 @@ $getfit_home_id = $getfit_upsert(
 update_option( 'show_on_front', 'page' );
 update_option( 'page_on_front', $getfit_home_id );
 
-// 4. Design layer (served inline by the child theme until exported to files).
+// 4. Design layer (child theme assets/).
 update_option( 'getfit_css', $getfit_get( 'wp-content/themes/getfit-child/assets/css/getfit.css' ), false );
 update_option( 'getfit_js', $getfit_get( 'wp-content/themes/getfit-child/assets/js/getfit.js' ), false );
+if ( empty( $assoc_args['skip-files'] ) ) {
+	// Same code as theme files (what `wp getfit export-assets` does).
+	foreach ( array( 'css/getfit.css' => 'getfit_css', 'js/getfit.js' => 'getfit_js' ) as $getfit_rel => $getfit_opt ) {
+		$getfit_file = get_stylesheet_directory() . '/assets/' . $getfit_rel;
+		wp_mkdir_p( dirname( $getfit_file ) );
+		file_put_contents( $getfit_file, get_option( $getfit_opt ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+	}
+}
 
 // 5. Rebuild Elementor CSS.
 \Elementor\Plugin::$instance->files_manager->clear_cache();

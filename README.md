@@ -31,6 +31,6 @@ Build of the *Get Fit* design for https://personal-trainer-example.fi-c.seravo.c
 
 ```bash
 python3 tools/elementor-build/gen.py          # regenerate elementor/*.json
-wp eval-file tools/import-to-wordpress.php     # push kit, header, footer, home page and assets
-wp getfit export-assets                        # write getfit_css / getfit_js options to theme files
+wp eval-file tools/import-to-wordpress.php <commit-sha>   # push kit, header, footer, home page and theme assets
+wp getfit export-assets                        # (optional) rewrite theme files from the options
 ```

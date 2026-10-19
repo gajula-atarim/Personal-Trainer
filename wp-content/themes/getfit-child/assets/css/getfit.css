@@ -349,3 +349,14 @@ body.getfit .elementor { overflow-x: hidden; }
 .gf-counter .elementor-counter { align-items: center !important; }
 .gf-counter .elementor-counter-number-wrapper { justify-content: center !important; }
 .gf-counter .elementor-counter-title { text-align: center !important; justify-content: center !important; }
+/* Small phones (≤400px): photo visible above the About quote, single-line buttons, stacked booking service cards. */
+@media (max-width: 400px) {
+	.gf-about-media { aspect-ratio: auto !important; padding: 78vw 12px 12px !important; background-size: cover !important; background-position: center 18% !important; }
+	.gf-quote-card { padding: 18px !important; }
+	.gf-quote-card .elementor-widget-text-editor { font-size: 15px !important; }
+	.gf-btn .elementor-button { white-space: nowrap !important; padding-left: 18px !important; padding-right: 18px !important; font-size: 14px !important; max-width: 100%; }
+	.gf-btn .elementor-button .elementor-button-text { white-space: nowrap !important; }
+	#programs .gf-btn--ghost .elementor-button { font-size: 12.5px !important; padding-left: 14px !important; padding-right: 14px !important; }
+	.gf-svc { flex-wrap: wrap !important; row-gap: 6px !important; }
+	.gf-svc > .gf-grow { flex: 1 1 100% !important; }
+}

@@ -7,6 +7,28 @@
 	var $ = function (s, c) { return (c || document).querySelector(s); };
 	var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 	var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	/* Text the scripts write themselves (everything else is edited in Elementor). */
+	var FI = /^fi/i.test(document.documentElement.lang || '');
+	var T = FI ? {
+		locale: 'fi-FI',
+		quarterly: function (sym, total) { return total + ' ' + sym + ' laskutetaan 3 kk välein'; },
+		price: function (sym, v) { return v + ' ' + sym; },
+		at: ' klo ',
+		confirm: 'Vahvista ilmainen kokeilu',
+		full: 'varattu täyteen',
+		interested: function (name) { return 'Kiinnostunut paketista: ' + name; },
+		planSuffix: /\s*-?paketti\s*$/i
+	} : {
+		locale: 'en-GB',
+		quarterly: function (sym, total) { return sym + total + ' billed every 3 months'; },
+		price: function (sym, v) { return sym + v; },
+		at: ' at ',
+		confirm: 'Confirm my free trial',
+		full: 'fully booked',
+		interested: function (name) { return 'Interested in the ' + name + ' plan'; },
+		planSuffix: /\s*package\s*$/i
+	};
 	var raf = window.requestAnimationFrame.bind(window);
 
 	function inEditor() {
@@ -170,8 +192,8 @@
 			cards.forEach(function (c) {
 				if (!c.price) return;
 				var v = quarterly ? Math.round(c.monthly * 0.9) : c.monthly;
-				c.price.textContent = c.symbol + v;
-				if (c.note) c.note.textContent = quarterly ? c.symbol + (v * 3) + ' billed every 3 months' : c.noteText;
+				c.price.textContent = T.price(c.symbol, v);
+				if (c.note) c.note.textContent = quarterly ? T.quarterly(c.symbol, v * 3) : c.noteText;
 			});
 		}
 		opts.forEach(function (o) { pressable(o, function () { set(o.classList.contains('gf-billing-q')); }); });
@@ -207,7 +229,7 @@
 			if (d.getDay() !== 0) days.push(new Date(d));
 			d.setDate(d.getDate() + 1);
 		}
-		var fmt = function (date, o) { return date.toLocaleDateString('en-GB', o); };
+		var fmt = function (date, o) { return date.toLocaleDateString(T.locale, o).replace(/\.$/, ''); };
 		var st = { step: 1, svc: null, day: null, time: null };
 
 		if (daysEl) {
@@ -270,11 +292,11 @@
 				timesEl.innerHTML = TIMES.map(function (t, j) {
 					var off = (st.day * 3 + j) % 5 === 1;
 					return '<button type="button" class="gf-time' + (st.time === t ? ' is-selected' : '') + '" data-t="' + t + '"' +
-						(off ? ' disabled aria-label="' + t + ' fully booked"' : ' aria-pressed="' + (st.time === t) + '"') + '>' + t + '</button>';
+						(off ? ' disabled aria-label="' + t + ' ' + T.full + '"' : ' aria-pressed="' + (st.time === t) + '"') + '>' + t + '</button>';
 				}).join('');
 			}
 			fill('.gf-summary-name', st.svc ? st.svc.name : '');
-			fill('.gf-summary-when', st.day !== null && st.time ? dateLabel() + ' at ' + st.time + (st.svc ? ' · ' + st.svc.where : '') : '');
+			fill('.gf-summary-when', st.day !== null && st.time ? dateLabel() + T.at + st.time + (st.svc ? ' · ' + st.svc.where : '') : '');
 			if (st.step === 4 && form) {
 				fill('.gf-first-name', form.elements.name.value.trim().split(' ')[0]);
 				fill('.gf-done-service', st.svc ? st.svc.name : '');
@@ -285,7 +307,7 @@
 			var ok = valid();
 			if (next) next.classList.toggle('is-disabled', !ok);
 			if (nextA) nextA.setAttribute('aria-disabled', ok ? 'false' : 'true');
-			if (nextText) nextText.textContent = st.step === 3 ? 'Confirm my free trial' : nextDefault;
+			if (nextText) nextText.textContent = st.step === 3 ? T.confirm : nextDefault;
 			if (back) back.classList.toggle('is-hidden', st.step === 1);
 			if (nav) nav.style.display = st.step === 4 ? 'none' : '';
 		}
@@ -322,8 +344,8 @@
 		$$('.gf-plan-btn a').forEach(function (a) {
 			a.addEventListener('click', function () {
 				var card = a.closest('.gf-plan');
-				var name = card ? headingText($('h3', card).closest('.elementor-widget')).replace(/\s*package\s*$/i, '') : '';
-				if (booking) booking.prefill('trial', name ? 'Interested in the ' + name + ' plan' : '');
+				var name = card ? headingText($('h3', card).closest('.elementor-widget')).replace(T.planSuffix, '') : '';
+				if (booking) booking.prefill('trial', name ? T.interested(name) : '');
 			});
 		});
 	}
@@ -337,8 +359,19 @@
 		});
 	}
 
+	/* Finnish number format for the stats counters (4.9 -> 4,9). */
+	function counters() {
+		if (!FI) return;
+		$$('.gf-counter .elementor-counter-number').forEach(function (n) {
+			new MutationObserver(function () {
+				if (n.textContent.indexOf('.') !== -1) n.textContent = n.textContent.replace('.', ',');
+			}).observe(n, { childList: true, characterData: true, subtree: true });
+		});
+	}
+
 	function init() {
 		if (inEditor()) return;
+		counters();
 		header();
 		mobileMenu();
 		hero();

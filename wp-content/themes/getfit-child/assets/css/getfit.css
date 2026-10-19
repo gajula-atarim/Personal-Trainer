@@ -333,9 +333,12 @@ body.getfit .elementor { overflow-x: hidden; }
 .gf-checklist .elementor-icon-list-icon svg, .gf-checklist .elementor-icon-list-icon i { display: block !important; margin: 0 !important; position: static !important; width: 11px !important; height: 11px !important; font-size: 11px !important; line-height: 1 !important; }
 /* Phone hero: photo on top (focus point set per slide in Elementor), text below it, so faces are not covered or cropped. */
 @media (max-width: 767px) {
-	.gf-hero-bg { bottom: auto !important; height: 58vh !important; min-height: 0 !important; }
+	.gf-hero-bg { bottom: auto !important; height: 42vh !important; min-height: 0 !important; }
 	.gf-hero-slide.is-active .gf-hero-bg { transform: none; }
 	.gf-hero-bg::before, .gf-hero-bg > .elementor-background-overlay { background-image: linear-gradient(180deg, rgba(10, 26, 26, .55) 0%, rgba(10, 26, 26, 0) 22%, rgba(10, 26, 26, 0) 55%, #0A1A1A 100%) !important; opacity: 1 !important; }
 	.gf-hero-slide::after { display: none; }
-	.gf-hero-inner { padding-top: calc(58vh - 70px) !important; }
+	.gf-hero, .gf-hero-slide, .gf-hero-inner { min-height: 0 !important; --min-height: 0px !important; }
+	.gf-hero-inner, .gf-hero-inner > .e-con-inner { justify-content: flex-start !important; }
+	.gf-hero-inner { padding-top: 0 !important; padding-bottom: 0 !important; }
+	.gf-hero-inner > .e-con-inner { padding-top: calc(42vh - 30px) !important; padding-bottom: 96px !important; }
 }

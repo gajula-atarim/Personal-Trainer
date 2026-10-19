@@ -344,3 +344,8 @@ body.getfit .elementor { overflow-x: hidden; }
 }
 /* Method steps: keep the 232px circle box from stretching full width on smaller screens, so circle, ring and badge stay centred. */
 .gf-step-media { width: 232px !important; max-width: 232px !important; min-width: 232px; height: 232px; --width: 232px !important; flex: 0 0 232px !important; align-self: center !important; margin-left: auto !important; margin-right: auto !important; }
+/* Results stats: centre values and labels in each cell. */
+.gf-stat { text-align: center; }
+.gf-counter .elementor-counter { align-items: center !important; }
+.gf-counter .elementor-counter-number-wrapper { justify-content: center !important; }
+.gf-counter .elementor-counter-title { text-align: center !important; justify-content: center !important; }

@@ -342,3 +342,5 @@ body.getfit .elementor { overflow-x: hidden; }
 	.gf-hero-inner { padding-top: 0 !important; padding-bottom: 0 !important; }
 	.gf-hero-inner > .e-con-inner { padding-top: calc(42vh - 30px) !important; padding-bottom: 96px !important; }
 }
+/* Method steps: keep the 232px circle box from stretching full width on smaller screens, so circle, ring and badge stay centred. */
+.gf-step-media { width: 232px !important; max-width: 232px !important; min-width: 232px; height: 232px; --width: 232px !important; flex: 0 0 232px !important; align-self: center !important; margin-left: auto !important; margin-right: auto !important; }

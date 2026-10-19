@@ -105,7 +105,8 @@ body:not(.elementor-editor-active) .gf-hero-slide.is-active { opacity: 1; visibi
 .gf-hero-tab .elementor-heading-title { display: flex; flex-direction: column; gap: 12px; transition: color .3s ease; }
 .gf-hero-tab .elementor-heading-title::before { content: ""; display: block; height: 3px; border-radius: 999px; background: linear-gradient(var(--gf-lime), var(--gf-lime)) 0 0 / var(--p, 0%) 100% no-repeat, rgba(255, 255, 255, .2); }
 body.getfit .gf-hero .gf-hero-tab.is-active .elementor-heading-title { color: #fff; }
-@media (max-width: 767px) { .gf-hero-tab .elementor-heading-title { font-size: 11px; letter-spacing: .08em; } }
+@media (max-width: 767px) { .gf-hero-tab .elementor-heading-title { font-size: 11px; letter-spacing: .08em; overflow-wrap: anywhere; hyphens: auto; } }
+@media (max-width: 480px) { .gf-hero-tab .elementor-heading-title { font-size: 10px; letter-spacing: .03em; } }
 
 /* ---------- studio features */
 .gf-feature-icon .elementor-icon { transition: transform 350ms cubic-bezier(.2, .8, .2, 1); }

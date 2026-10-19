@@ -371,12 +371,12 @@ body.getfit .elementor { overflow-x: hidden; }
 	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item:hover { background: var(--gf-lime-2); }
 }
 @media (max-width: 767px) { .gf-nav nav.hfe-dropdown li.gf-menu-cta a, .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item, .gf-nav nav.hfe-dropdown li.gf-menu-cta a:hover, .gf-nav nav.hfe-dropdown li.gf-menu-cta a:focus { background-color: #DAF25E !important; color: #0A1A1A !important; border-radius: 999px !important; justify-content: center !important; font-weight: 700 !important; } }
-/* Tablets: final CTA photo without the dark overlay, filling the banner height; text centred beside it. */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Tablet + desktop: final CTA photo in full colour (no dark overlay), filling the banner height beside the text. */
+@media (min-width: 768px) {
 	.gf-cta { background: var(--gf-surface); align-items: stretch !important; }
 	.gf-cta::after { background: linear-gradient(90deg, rgba(10, 26, 26, 0) 0%, rgba(10, 26, 26, 0) 45%, rgba(10, 26, 26, .35) 52%, rgba(10, 26, 26, 0) 60%) !important; }
-	.gf-cta-img { align-self: stretch !important; }
-	.gf-cta-img .elementor-widget-container { height: 100%; }
-	.gf-cta-img img { height: 100% !important; aspect-ratio: auto !important; object-fit: cover; object-position: 60% center; }
+	.gf-cta-img { align-self: stretch !important; position: relative; min-height: 360px; }
+	.gf-cta-img .elementor-widget-container { position: absolute; inset: 0; }
+	.gf-cta-img img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; object-fit: cover; object-position: 60% 30%; }
 	.gf-cta-copy { justify-content: center !important; align-self: center !important; }
 }

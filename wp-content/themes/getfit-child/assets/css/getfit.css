@@ -324,3 +324,6 @@ body.getfit .elementor { overflow-x: hidden; }
 @media (max-width: 767px) {
 	.gf-glow--lime-left::before, .gf-glow--teal-right::before { left: 0; right: 0; width: 100%; height: 520px; }
 }
+/* Phone hero tabs: keep long Finnish labels whole (wrap only between words). */
+@media (max-width: 480px) { .gf-hero-tab .elementor-heading-title { font-size: 10px !important; letter-spacing: 0 !important; overflow-wrap: normal !important; hyphens: none !important; } }
+@media (max-width: 360px) { .gf-hero-tab .elementor-heading-title { font-size: 9px !important; } }

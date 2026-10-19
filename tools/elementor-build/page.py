@@ -47,14 +47,20 @@ HERO = [
     (9, 'getfit-hero-online-scaled.jpg', 'Online coaching · Anywhere', 'Your coach.', 'In your pocket.',
      'A programme in the app, video form reviews and a real coach checking in every week, wherever you train.'),
 ]
+HERO_FOCUS = [(56, 12), (52, 40), (28, 38)]  # x%, y% of each photo's faces, used on phones
 HERO_MIN = custom('clamp(640px, 96vh, 940px)')
 
 
 def hero():
     slides = []
     for i, (att, f, eb, l1, l2, sub) in enumerate(HERO):
+        fx, fy = HERO_FOCUS[i]
         bg = con([], merge(card_bg(att, f, 90, 'rgba(10,26,26,0.94)', 0, 'rgba(10,26,26,0.15)', 100),
-                           {'min_height': px(100, '%')}), cls='gf-hero-bg', title='Slide image')
+                           {'min_height': px(100, '%'),
+                            # Phones: focus point that keeps the faces in view (Background > Position > Custom).
+                            'background_position_mobile': 'initial',
+                            'background_xpos_mobile': px(fx, '%'), 'background_ypos_mobile': px(fy, '%')}),
+                  cls='gf-hero-bg', title='Slide image')
         content = con([
             eyebrow(eb),
             heading(l1 + '<br><span class="gf-lime">' + l2 + '</span>', 'h1' if i == 0 else 'h2', WHITE,

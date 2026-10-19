@@ -370,3 +370,4 @@ body.getfit .elementor { overflow-x: hidden; }
 	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item { background: var(--gf-lime); color: var(--gf-ink) !important; border-radius: 999px; justify-content: center; text-align: center; font-weight: 700; border: 0; }
 	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item:hover { background: var(--gf-lime-2); }
 }
+@media (max-width: 767px) { .gf-nav nav.hfe-dropdown li.gf-menu-cta a, .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item, .gf-nav nav.hfe-dropdown li.gf-menu-cta a:hover, .gf-nav nav.hfe-dropdown li.gf-menu-cta a:focus { background-color: #DAF25E !important; color: #0A1A1A !important; border-radius: 999px !important; justify-content: center !important; font-weight: 700 !important; } }

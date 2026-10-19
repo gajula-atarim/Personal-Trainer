@@ -287,3 +287,23 @@ body.getfit .gf-backtotop .elementor-heading-title a:hover { color: var(--gf-lim
 	.gf-cta::after { background: linear-gradient(180deg, rgba(10, 26, 26, .2) 0%, rgba(10, 26, 26, .55) 30%, rgba(10, 26, 26, 0) 45%); }
 	.gf-cta-img { flex: 0 0 auto !important; width: 100% !important; }
 }
+
+/* ---------- responsive refinements */
+/* Booking: when the widget stacks, the panel grows with its content. */
+@media (max-width: 1024px) { .gf-booking .gf-bpanel { flex: 0 0 auto !important; } }
+/* Narrow phones: the hero's own CTA sits right below, so the header keeps logo + menu only. */
+@media (max-width: 400px) { .gf-header-bar .gf-header-cta { display: none; } .gf-header-bar .gf-nav { margin-left: auto !important; } }
+@media (max-width: 380px) { .gf-hero-tab .elementor-heading-title { font-size: 9px; letter-spacing: 0; } }
+/* Small laptops / landscape tablets (880–1024px): keep the design's multi-column layout. */
+@media (min-width: 880px) and (max-width: 1024px) {
+	#studio .e-grid, #coaches .e-grid, .gf-stats { --e-con-grid-template-columns: repeat(4, 1fr); }
+	#programs .e-grid, #results .e-grid:not(.gf-stats), .gf-plans { --e-con-grid-template-columns: repeat(3, 1fr); }
+	#about .e-grid, #faq .e-grid { --e-con-grid-template-columns: repeat(2, 1fr); }
+	.gf-plans { max-width: 1120px; }
+	.gf-stat { border-bottom: 0; border-right: 1px solid rgba(255, 255, 255, .08); }
+	.gf-stat:nth-child(2n) { border-right: 1px solid rgba(255, 255, 255, .08); }
+	.gf-stat--last { border-right: 0 !important; }
+	.gf-booking { flex-direction: row !important; }
+	.gf-booking .gf-bsteps { width: 300px !important; flex: 0 0 300px; }
+	.gf-booking .gf-bpanel { flex: 1 1 0 !important; width: auto !important; }
+}

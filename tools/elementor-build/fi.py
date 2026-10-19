@@ -10,7 +10,7 @@ FI = {
     'Strength · Kamppi studio': 'Voima · Kampin studio',
     'Get strong.<br><span class="gf-lime">Stay strong.</span>': 'Vahvistu.<br><span class="gf-lime">Pysy vahvana.</span>',
     '<p>Coached personal training in central Helsinki. A plan built for your body, technique checked every session, progress you can measure.</p>':
-        '<p>Valmennettua personal trainingia Helsingin keskustassa. Kehollesi tehty ohjelma, tekniikka tarkistetaan joka kerta ja edistyminen näkyy mittareissa.</p>',
+        '<p>Henkilökohtaista valmennusta Helsingin keskustassa. Kehollesi tehty ohjelma, tekniikka tarkistetaan joka kerta ja edistyminen näkyy mittareissa.</p>',
     'Book a free trial': 'Varaa ilmainen kokeilu',
     'How it works': 'Näin se toimii',
     '<span class="gf-stars">★★★★★</span><strong>4.9</strong> from 380+ reviews': '<span class="gf-stars">★★★★★</span><strong>4,9</strong> yli 380 arvostelusta',
@@ -150,16 +150,16 @@ FI = {
     # pricing
     '06 · Pricing': '06 · Hinnasto',
     'Simple plans. Zero risk to start.': 'Selkeät paketit. Aloitus ilman riskiä.',
-    '<span class="gf-offer-tag">OFFER</span>50% off your first month — until 30 November': '<span class="gf-offer-tag">TARJOUS</span>Ensimmäinen kuukausi −50 % – 30.11. asti',
+    '<span class="gf-offer-tag">OFFER</span>50% off your first month — until 30 November': '<span class="gf-offer-tag">TARJOUS</span>Ensimmäinen kuukausi −50 % – 30.11. asti',
     'Monthly': 'Kuukausittain',
-    '3 months · save 10%': '3 kk · säästä 10 %',
+    '3 months · save 10%': '3 kk · säästä 10 %',
     'Online package': 'Etäpaketti',
     'Remote coaching, any gym': 'Etävalmennus, mikä tahansa sali',
-    '€129': '129 €',
-    '€299': '299 €',
-    '€529': '529 €',
-    '€85': '85 €',
-    '€60': '60 €',
+    '€129': '129 €',
+    '€299': '299 €',
+    '€529': '529 €',
+    '€85': '85 €',
+    '€60': '60 €',
     '/ month': '/ kk',
     'Billed monthly · cancel anytime': 'Laskutus kuukausittain · peru milloin vain',
     'Personal programme in the app': 'Henkilökohtainen ohjelma sovelluksessa',
@@ -244,7 +244,7 @@ FI = {
     '<p>Your first session is free. No contract, no pressure.</p>': '<p>Ensimmäinen treeni on ilmainen. Ei sopimusta, ei painostusta.</p>',
     'Call +358 40 123 4567': 'Soita +358 40 123 4567',
     '<p>Personal training in central Helsinki and online. Strength, weight loss and coaching that fits your life.</p>':
-        '<p>Personal trainingia Helsingin keskustassa ja etänä. Voimaa, painonpudotusta ja valmennusta, joka sopii elämääsi.</p>',
+        '<p>Henkilökohtaista valmennusta Helsingin keskustassa ja etänä. Voimaa, painonpudotusta ja valmennusta, joka sopii elämääsi.</p>',
     'Explore': 'Selaa',
     'About': 'Meistä',
     'Programmes': 'Ohjelmat',
@@ -262,5 +262,16 @@ FI = {
     'Back to top <span class="gf-totop">↑</span>': 'Takaisin ylös <span class="gf-totop">↑</span>',
 }
 
-# Navigator titles in the Elementor editor.
-FI_TITLES = {}
+# Booking form (HTML widgets).
+FI_HTML = {
+    '<div class="gf-days" aria-label="Choose a day"></div><div class="gf-times-label">Available times</div><div class="gf-times" aria-label="Choose a time"></div><div class="gf-times-empty">Select a day to see open slots.</div>':
+        '<div class="gf-days" aria-label="Valitse päivä"></div><div class="gf-times-label">Vapaat ajat</div><div class="gf-times" aria-label="Valitse aika"></div><div class="gf-times-empty">Valitse päivä nähdäksesi vapaat ajat.</div>',
+    '<div class="gf-summary"><div class="gf-summary-name"></div><div class="gf-summary-when"></div></div><form class="gf-form" novalidate><label>Full name<input name="name" autocomplete="name" placeholder="Aino Laine"></label><label>Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com"></label><label>What would you like to achieve? <span>Optional</span><textarea name="note" rows="3" placeholder="e.g. Lose 8 kg before summer"></textarea></label></form>':
+        '<div class="gf-summary"><div class="gf-summary-name"></div><div class="gf-summary-when"></div></div><form class="gf-form" novalidate><label>Koko nimi<input name="name" autocomplete="name" placeholder="Aino Laine"></label><label>Sähköposti<input name="email" type="email" autocomplete="email" placeholder="nimi@esimerkki.fi"></label><label>Mitä haluaisit saavuttaa? <span>Vapaaehtoinen</span><textarea name="note" rows="3" placeholder="esim. −8 kg ennen kesää"></textarea></label></form>',
+}
+
+# Counter suffixes: Finnish puts a (non-breaking) space before % and units.
+FI_SUFFIX = {'%': '\u00a0%', ' kg': '\u00a0kg'}
+
+# Site Settings (Elementor kit).
+FI_KIT = {'site_description': 'Henkilökohtaista valmennusta Helsingissä ja etänä'}

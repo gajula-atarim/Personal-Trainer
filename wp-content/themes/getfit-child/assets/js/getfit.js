@@ -12,8 +12,9 @@
 	var FI = /^fi/i.test(document.documentElement.lang || '');
 	var T = FI ? {
 		locale: 'fi-FI',
-		quarterly: function (sym, total) { return total + ' ' + sym + ' laskutetaan 3 kk välein'; },
-		price: function (sym, v) { return v + ' ' + sym; },
+		quarterly: function (sym, total) { return total + '\u00a0' + sym + ' laskutetaan 3 kk välein'; },
+		price: function (sym, v) { return v + '\u00a0' + sym; },
+		time: function (t) { return t.replace(/^0/, '').replace(':', '.'); },
 		at: ' klo ',
 		confirm: 'Vahvista ilmainen kokeilu',
 		full: 'varattu täyteen',
@@ -23,6 +24,7 @@
 		locale: 'en-GB',
 		quarterly: function (sym, total) { return sym + total + ' billed every 3 months'; },
 		price: function (sym, v) { return sym + v; },
+		time: function (t) { return t; },
 		at: ' at ',
 		confirm: 'Confirm my free trial',
 		full: 'fully booked',
@@ -292,16 +294,16 @@
 				timesEl.innerHTML = TIMES.map(function (t, j) {
 					var off = (st.day * 3 + j) % 5 === 1;
 					return '<button type="button" class="gf-time' + (st.time === t ? ' is-selected' : '') + '" data-t="' + t + '"' +
-						(off ? ' disabled aria-label="' + t + ' ' + T.full + '"' : ' aria-pressed="' + (st.time === t) + '"') + '>' + t + '</button>';
+						(off ? ' disabled aria-label="' + T.time(t) + ' ' + T.full + '"' : ' aria-pressed="' + (st.time === t) + '"') + '>' + T.time(t) + '</button>';
 				}).join('');
 			}
 			fill('.gf-summary-name', st.svc ? st.svc.name : '');
-			fill('.gf-summary-when', st.day !== null && st.time ? dateLabel() + T.at + st.time + (st.svc ? ' · ' + st.svc.where : '') : '');
+			fill('.gf-summary-when', st.day !== null && st.time ? dateLabel() + T.at + T.time(st.time) + (st.svc ? ' · ' + st.svc.where : '') : '');
 			if (st.step === 4 && form) {
 				fill('.gf-first-name', form.elements.name.value.trim().split(' ')[0]);
 				fill('.gf-done-service', st.svc ? st.svc.name : '');
 				fill('.gf-done-date', dateLabel());
-				fill('.gf-done-time', st.time || '');
+				fill('.gf-done-time', st.time ? T.time(st.time) : '');
 				fill('.gf-done-email', form.elements.email.value.trim());
 			}
 			var ok = valid();

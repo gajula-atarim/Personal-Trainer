@@ -10,7 +10,7 @@ OUT = os.path.join(HERE, '..', '..', 'elementor')
 
 from el import dump  # noqa: E402
 import page, hf  # noqa: E402
-from fi import FI  # noqa: E402
+from fi import FI, FI_HTML, FI_SUFFIX, FI_KIT  # noqa: E402
 
 TEXT_KEYS = ('title', 'editor', 'text', 'item_title', 'shortcode')
 missing = set()
@@ -37,6 +37,12 @@ def translate(elements):
         for k in TEXT_KEYS:
             if isinstance(s.get(k), str):
                 s[k] = tr(s[k])
+        if e.get('widgetType') == 'html':
+            if s['html'] not in FI_HTML:
+                missing.add(s['html'])
+            s['html'] = FI_HTML.get(s['html'], s['html'])
+        if e.get('widgetType') == 'counter':
+            s['suffix'] = FI_SUFFIX.get(s.get('suffix'), s.get('suffix'))
         for k in ('icon_list', 'items'):
             for item in s.get(k) or []:
                 for kk in ('text', 'item_title'):
@@ -48,7 +54,7 @@ def translate(elements):
 
 files = {'home.json': dump(translate(page.page())), 'header.json': dump(translate(hf.header())),
          'footer.json': dump(translate(hf.footer())),
-         'kit.json': json.dumps(hf.kit(), ensure_ascii=False)}
+         'kit.json': json.dumps({**hf.kit(), **FI_KIT}, ensure_ascii=False)}
 for name, data in files.items():
     with open(os.path.join(OUT, name), 'w') as fh:
         fh.write(data)

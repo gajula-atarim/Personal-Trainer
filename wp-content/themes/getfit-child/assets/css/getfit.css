@@ -315,3 +315,12 @@ body.getfit .gf-backtotop .elementor-heading-title a:hover { color: var(--gf-lim
 	.gf-booking .gf-bsteps { width: 220px !important; flex: 0 0 220px; padding-left: 8px !important; padding-right: 8px !important; }
 	.gf-booking .gf-bpanel { flex: 1 1 0 !important; width: auto !important; }
 }
+
+/* ---------- no horizontal overflow on any browser (older iOS Safari ignores overflow: clip) */
+html, body.getfit { overflow-x: hidden; max-width: 100%; }
+body.getfit .elementor { overflow-x: hidden; }
+.gf-glow { overflow-x: hidden; overflow-x: clip; }
+.gf-marquee { overflow: hidden !important; max-width: 100%; }
+@media (max-width: 767px) {
+	.gf-glow--lime-left::before, .gf-glow--teal-right::before { left: 0; right: 0; width: 100%; height: 520px; }
+}

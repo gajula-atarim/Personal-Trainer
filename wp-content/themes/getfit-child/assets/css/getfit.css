@@ -307,3 +307,11 @@ body.getfit .gf-backtotop .elementor-heading-title a:hover { color: var(--gf-lim
 	.gf-booking .gf-bsteps { width: 300px !important; flex: 0 0 300px; }
 	.gf-booking .gf-bpanel { flex: 1 1 0 !important; width: auto !important; }
 }
+/* Portrait tablets (768–879px): full-width third card instead of an orphan, booking side by side. */
+@media (min-width: 768px) and (max-width: 879px) {
+	#programs .e-grid > .e-con:nth-child(3):last-child, #results .e-grid:not(.gf-stats) > .e-con:nth-child(3):last-child { grid-column: 1 / -1; }
+	#programs .e-grid > .e-con:nth-child(3):last-child .gf-ar-45, #results .e-grid:not(.gf-stats) > .gf-ar-45:nth-child(3):last-child { aspect-ratio: 16 / 9; }
+	.gf-booking { flex-direction: row !important; }
+	.gf-booking .gf-bsteps { width: 220px !important; flex: 0 0 220px; padding-left: 8px !important; padding-right: 8px !important; }
+	.gf-booking .gf-bpanel { flex: 1 1 0 !important; width: auto !important; }
+}

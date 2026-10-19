@@ -296,8 +296,8 @@ body.getfit .gf-backtotop .elementor-heading-title a:hover { color: var(--gf-lim
 @media (max-width: 380px) { .gf-hero-tab .elementor-heading-title { font-size: 9px; letter-spacing: 0; } }
 /* Small laptops / landscape tablets (880–1024px): keep the design's multi-column layout. */
 @media (min-width: 880px) and (max-width: 1024px) {
-	#studio .e-grid, #coaches .e-grid, .gf-stats { --e-con-grid-template-columns: repeat(4, 1fr); }
-	#programs .e-grid, #results .e-grid:not(.gf-stats), .gf-plans { --e-con-grid-template-columns: repeat(3, 1fr); }
+	#studio .e-grid, #coaches .e-grid, body.getfit .gf-stats.e-grid { --e-con-grid-template-columns: repeat(4, 1fr); }
+	#programs .e-grid, #results .e-grid:not(.gf-stats), body.getfit .gf-plans.e-grid { --e-con-grid-template-columns: repeat(3, 1fr); }
 	#about .e-grid, #faq .e-grid { --e-con-grid-template-columns: repeat(2, 1fr); }
 	.gf-plans { max-width: 1120px; }
 	.gf-stat { border-bottom: 0; border-right: 1px solid rgba(255, 255, 255, .08); }

@@ -360,3 +360,13 @@ body.getfit .elementor { overflow-x: hidden; }
 	.gf-svc { flex-wrap: wrap !important; row-gap: 6px !important; }
 	.gf-svc > .gf-grow { flex: 1 1 100% !important; }
 }
+/* Phones (<768px): header CTA moves into the hamburger menu so it never covers the hero photo.
+   Tablet and desktop keep the header button; the menu item is hidden there. */
+@media (min-width: 768px) { .gf-nav .gf-menu-cta { display: none !important; } }
+@media (max-width: 767px) {
+	.gf-header-bar .gf-header-cta { display: none !important; }
+	.gf-header-bar .gf-nav { margin-left: auto !important; }
+	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta { border-bottom: 0; padding: 12px 16px 16px; }
+	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item { background: var(--gf-lime); color: var(--gf-ink) !important; border-radius: 999px; justify-content: center; text-align: center; font-weight: 700; border: 0; }
+	body.getfit .gf-nav nav.hfe-dropdown li.gf-menu-cta a.hfe-menu-item:hover { background: var(--gf-lime-2); }
+}

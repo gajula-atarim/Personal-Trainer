@@ -3,7 +3,7 @@ from el import *
 
 
 def logo(size, link='/'):
-    return heading('GET<span class="gf-lime">FIT</span>', 'div', WHITE,
+    return heading('Personal<span class="gf-lime">Trainer</span>', 'div', WHITE,
                    typo('Archivo', size, 900, 1, -0.04, style='italic'), cls='gf-logo', link=link)
 
 

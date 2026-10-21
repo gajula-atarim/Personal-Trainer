@@ -380,3 +380,10 @@ body.getfit .elementor { overflow-x: hidden; }
 	.gf-cta-img img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; object-fit: cover; object-position: 60% 30%; }
 	.gf-cta-copy { justify-content: center !important; align-self: center !important; }
 }
+/* Logo "PersonalTrainer": one line; slightly smaller where the header is tight. */
+.gf-logo .elementor-heading-title { white-space: nowrap; }
+@media (min-width: 1025px) and (max-width: 1240px) {
+	.gf-header-bar .gf-logo .elementor-heading-title { font-size: 22px; }
+	.gf-nav .hfe-nav-menu > li > a.hfe-menu-item { padding-left: 10px !important; padding-right: 10px !important; }
+}
+@media (max-width: 360px) { .gf-header-bar .gf-logo .elementor-heading-title { font-size: 22px; } }

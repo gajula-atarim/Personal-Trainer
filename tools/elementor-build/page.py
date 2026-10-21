@@ -438,7 +438,7 @@ def faq():
     }, 'gf-faq')
     acc['elements'] = kids
     left = anim(con([eyebrow('08 · Questions'), h2('Still deciding? Good questions.'),
-                     lead('Anything else, email <a href="mailto:hello@personaltrainer.fi">hello@personaltrainer.fi</a>. We reply within one working day.', margin=mt(20), maxw=420)]))
+                     lead('Anything else, email <a href="mailto:example@example-personal-trainer.com">example@example-personal-trainer.com</a>. We reply within one working day.', margin=mt(20), maxw=420)]))
     return section([grid([left, anim(acc)], 2, (56, 56), 1, 1, {'grid_align_items': 'start'})],
                    sid='faq', title='FAQ', pad=(40, 32, 140, 32))
 

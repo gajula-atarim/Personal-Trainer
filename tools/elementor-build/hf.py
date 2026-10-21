@@ -74,7 +74,7 @@ def footer():
                       cls='gf-flinks', margin=mt(12), extra={'text_indent': px(0)}, hover=LIME),
             text('<p>Mon–Fri 06:30 – 20:00<br>Sat 08:00 – 14:00</p>', SOFT, typo('Hanken Grotesk', 15, 400, 1.6), margin=mt(20)),
         ], title='Visit'),
-        flinks('Contact', [('hello@personaltrainer.fi', 'mailto:hello@personaltrainer.fi'), ('+358 40 123 4567', 'tel:+358401234567'), ('Coach with us', 'mailto:coaches@personaltrainer.fi')]),
+        flinks('Contact', [('example@example-personal-trainer.com', 'mailto:example@example-personal-trainer.com'), ('+358 40 123 4567', 'tel:+358401234567'), ('Coach with us', 'mailto:example@example-personal-trainer.com')]),
     ], 4, (48, 48), 2, 1, {'padding': dims(48, 0)}, title='Footer columns')
     bottom = row([
         w('copyright', {'shortcode': '© [hfe_current_year] PersonalTrainer. All rights reserved.', 'align': 'left',

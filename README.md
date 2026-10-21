@@ -30,7 +30,7 @@ Build of the *Get Fit* design for https://personal-trainer-example.fi-c.seravo.c
 ## Rebuilding / re-importing
 
 ```bash
-python3 tools/elementor-build/gen.py          # regenerate elementor/*.json (Finnish copy from tools/elementor-build/fi.py)
+python3 tools/elementor-build/gen.py [fi]     # regenerate elementor/*.json (English by default, Finnish with "fi")
 wp eval-file tools/import-to-wordpress.php <commit-sha>   # push kit, header, footer, home page and theme assets
 wp getfit export-assets                        # (optional) rewrite theme files from the options
 ```

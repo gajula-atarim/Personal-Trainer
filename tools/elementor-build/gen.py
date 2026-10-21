@@ -1,6 +1,7 @@
 """Regenerate the Elementor JSON in /elementor from the Python page definitions.
 
-    python3 tools/elementor-build/gen.py
+    python3 tools/elementor-build/gen.py        # English (the source copy in page.py / hf.py)
+    python3 tools/elementor-build/gen.py fi     # Finnish (copy from fi.py)
 """
 import json, os, sys
 
@@ -12,6 +13,7 @@ from el import dump  # noqa: E402
 import page, hf  # noqa: E402
 from fi import FI, FI_HTML, FI_SUFFIX, FI_KIT  # noqa: E402
 
+LANG = sys.argv[1] if len(sys.argv) > 1 else 'en'
 TEXT_KEYS = ('title', 'editor', 'text', 'item_title', 'shortcode')
 missing = set()
 
@@ -32,6 +34,8 @@ KEEP = {'+45 kg', '−14 kg', '−9 kg', 'AL', 'MH', 'DO', 'JK', 'EN', 'HS', 'Ai
 
 
 def translate(elements):
+    if LANG != 'fi':
+        return elements
     for e in elements:
         s = e['settings']
         for k in TEXT_KEYS:
@@ -54,7 +58,8 @@ def translate(elements):
 
 files = {'home.json': dump(translate(page.page())), 'header.json': dump(translate(hf.header())),
          'footer.json': dump(translate(hf.footer())),
-         'kit.json': json.dumps({**hf.kit(), **FI_KIT}, ensure_ascii=False)}
+         'kit.json': json.dumps({**hf.kit(), **(FI_KIT if LANG == 'fi' else {})}, ensure_ascii=False)}
+print('language:', LANG)
 for name, data in files.items():
     with open(os.path.join(OUT, name), 'w') as fh:
         fh.write(data)

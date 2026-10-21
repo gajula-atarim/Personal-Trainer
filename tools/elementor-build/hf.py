@@ -77,7 +77,7 @@ def footer():
         flinks('Contact', [('hello@getfit.fi', 'mailto:hello@getfit.fi'), ('+358 40 123 4567', 'tel:+358401234567'), ('Coach with us', 'mailto:coaches@getfit.fi')]),
     ], 4, (48, 48), 2, 1, {'padding': dims(48, 0)}, title='Footer columns')
     bottom = row([
-        w('copyright', {'shortcode': '© [hfe_current_year] Get Fit Personal Training. All rights reserved.', 'align': 'left',
+        w('copyright', {'shortcode': '© [hfe_current_year] PersonalTrainer. All rights reserved.', 'align': 'left',
                         'text_color': MUTED, **typo('Hanken Grotesk', 13, 400, 1.5, prefix='caption_typography')}, 'gf-copyright'),
         row([
             heading('Privacy', 'div', MUTED, typo('Hanken Grotesk', 13, 400, 1.5), link='/privacy-policy/', cls='gf-flink'),
@@ -128,6 +128,6 @@ def kit():
         'link_normal_color': LIME, 'link_hover_color': LIME2,
         'h2_color': WHITE, 'h3_color': WHITE,
         'container_width': px(1176), 'container_padding': dims(0), 'space_between_widgets': gap(0),
-        'site_name': 'Get Fit', 'site_description': 'Personal training in Helsinki and online',
+        'site_name': 'PersonalTrainer', 'site_description': 'Personal training in Helsinki and online',
         'viewport_md': 768, 'viewport_lg': 1025,
     }

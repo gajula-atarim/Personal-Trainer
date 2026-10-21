@@ -1,4 +1,4 @@
-"""Finnish copy for the Get Fit build (English source string -> Finnish).
+"""Finnish copy for the PersonalTrainer build (English source string -> Finnish).
 
 gen.py applies this to every visible text setting when it builds the JSON,
 so the English page definitions in page.py / hf.py stay the single source of
@@ -44,18 +44,18 @@ FI = {
     'Discover more about us': 'Tutustu meihin',
 
     # about
-    'About Get Fit': 'Tietoa Get Fitistä',
+    'About PersonalTrainer': 'Tietoa PersonalTrainerista',
     'Built by Oliver Virtanen, for people done with starting over.': 'Oliver Virtasen luoma – niille, jotka ovat kyllästyneet aloittamaan alusta.',
-    '<p>Oliver has coached in Helsinki for twelve years. He started Get Fit to give busy people what most gyms don’t: a real coach, a plan written for them and someone checking in every week.</p>':
-        '<p>Oliver on valmentanut Helsingissä kaksitoista vuotta. Hän perusti Get Fitin antaakseen kiireisille ihmisille sen, mitä useimmat salit eivät anna: oikean valmentajan, juuri heille kirjoitetun ohjelman ja jonkun, joka kysyy kuulumiset joka viikko.</p>',
+    '<p>Oliver has coached in Helsinki for twelve years. He started PersonalTrainer to give busy people what most gyms don’t: a real coach, a plan written for them and someone checking in every week.</p>':
+        '<p>Oliver on valmentanut Helsingissä kaksitoista vuotta. Hän perusti PersonalTrainerin antaakseen kiireisille ihmisille sen, mitä useimmat salit eivät anna: oikean valmentajan, juuri heille kirjoitetun ohjelman ja jonkun, joka kysyy kuulumiset joka viikko.</p>',
     '<p>Today he leads a team of certified coaches in Kamppi and online — with the same no-shortcuts approach.</p>':
         '<p>Nykyään hän johtaa sertifioitujen valmentajien tiimiä Kampissa ja verkossa – samalla oikoteitä välttävällä otteella.</p>',
     'Certified Strength & Conditioning Specialist': 'Sertifioitu voima- ja kuntovalmentaja (CSCS)',
     'Precision Nutrition Level 1': 'Precision Nutrition, taso 1',
     'BSc Sports Science, University of Jyväskylä': 'Liikuntatieteiden kandidaatti, Jyväskylän yliopisto',
     'Explore our plans →': 'Katso paketit →',
-    '<p>“I’d tried three gyms before Get Fit. Oliver’s team was the first to make it feel personal — and the first that stuck.”</p>':
-        '<p>”Kokeilin kolmea salia ennen Get Fitiä. Oliverin tiimi oli ensimmäinen, jolla treeni tuntui henkilökohtaiselta – ja ensimmäinen, jossa pysyin mukana.”</p>',
+    '<p>“I’d tried three gyms before PersonalTrainer. Oliver’s team was the first to make it feel personal — and the first that stuck.”</p>':
+        '<p>”Kokeilin kolmea salia ennen PersonalTraineria. Oliverin tiimi oli ensimmäinen, jolla treeni tuntui henkilökohtaiselta – ja ensimmäinen, jossa pysyin mukana.”</p>',
     'Client since 2024 · Helsinki': 'Asiakas vuodesta 2024 · Helsinki',
 
     # problems
@@ -69,10 +69,10 @@ FI = {
     '<p>Motivation drops in week three and there’s no one to notice, adjust or push.</p>': '<p>Motivaatio hiipuu kolmannella viikolla, eikä kukaan huomaa, korjaa suuntaa tai kannusta.</p>',
     'Crash diets': 'Pikadieetit',
     '<p>They work for a month, then the weight comes back — and so does the frustration.</p>': '<p>Ne toimivat kuukauden, sitten paino palaa – ja turhautuminen sen mukana.</p>',
-    'Get Fit fixes all three. <a href="#method">Here’s how ↓</a>': 'Get Fit korjaa kaikki kolme. <a href="#method">Näin se toimii ↓</a>',
+    'PersonalTrainer fixes all three. <a href="#method">Here’s how ↓</a>': 'PersonalTrainer korjaa kaikki kolme. <a href="#method">Näin se toimii ↓</a>',
 
     # method
-    '02 · The Get Fit method': '02 · Get Fit -menetelmä',
+    '02 · The PersonalTrainer method': '02 · PersonalTrainer-menetelmä',
     'A coach, a plan and a check-in <span class="gf-lime">every week.</span>': 'Valmentaja, ohjelma ja seuranta <span class="gf-lime">joka viikko.</span>',
     '<p>One coach walks with you from your free trial to results that last.</p>': '<p>Sama valmentaja kulkee rinnallasi ilmaisesta kokeilusta pysyviin tuloksiin.</p>',
     'Day 1': 'Päivä 1',
@@ -136,8 +136,8 @@ FI = {
     # coaches
     '05 · Your coaches': '05 · Valmentajamme',
     'Experts who care whether you show up.': 'Asiantuntijat, joille on väliä, että tulet paikalle.',
-    '<p>Every Get Fit coach is certified, insured and has at least five years of hands-on coaching.</p>':
-        '<p>Jokainen Get Fit -valmentaja on sertifioitu ja vakuutettu, ja jokaisella on vähintään viiden vuoden valmennuskokemus.</p>',
+    '<p>Every PersonalTrainer coach is certified, insured and has at least five years of hands-on coaching.</p>':
+        '<p>Jokainen PersonalTrainer-valmentaja on sertifioitu ja vakuutettu, ja jokaisella on vähintään viiden vuoden valmennuskokemus.</p>',
     'Strength & conditioning': 'Voima- ja kuntovalmennus',
     'CSCS · 9 years coaching': 'CSCS · 9 vuotta valmentajana',
     'Weight loss & nutrition': 'Painonpudotus ja ravinto',
@@ -256,7 +256,7 @@ FI = {
     '<p>Mon–Fri 06:30 – 20:00<br>Sat 08:00 – 14:00</p>': '<p>Ma–pe 6.30–20.00<br>La 8.00–14.00</p>',
     'Contact': 'Yhteystiedot',
     'Coach with us': 'Valmentajaksi meille',
-    '© [hfe_current_year] Get Fit Personal Training. All rights reserved.': '© [hfe_current_year] Get Fit Personal Training. Kaikki oikeudet pidätetään.',
+    '© [hfe_current_year] PersonalTrainer. All rights reserved.': '© [hfe_current_year] PersonalTrainer. Kaikki oikeudet pidätetään.',
     'Privacy': 'Tietosuoja',
     'Terms': 'Käyttöehdot',
     'Back to top <span class="gf-totop">↑</span>': 'Takaisin ylös <span class="gf-totop">↑</span>',

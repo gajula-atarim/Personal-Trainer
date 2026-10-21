@@ -1,6 +1,6 @@
-# Get Fit — personal trainer website (WordPress + Elementor)
+# PersonalTrainer — personal trainer website (WordPress + Elementor)
 
-Build of the *Get Fit* design for https://personal-trainer-example.fi-c.seravo.com/.
+Build of the *PersonalTrainer* design for https://personal-trainer-example.fi-c.seravo.com/.
 
 * **Theme:** Hello Elementor + child theme `getfit-child` (`wp-content/themes/getfit-child`)
 * **Page builder:** Elementor. Every section, heading, text, button, image, counter,

@@ -1,6 +1,6 @@
 <?php
 /**
- * Imports the Get Fit Elementor build into WordPress.
+ * Imports the PersonalTrainer Elementor build into WordPress.
  *
  *   wp eval-file tools/import-to-wordpress.php [<git-ref>]
  *
@@ -84,7 +84,7 @@ list( $getfit_footer ) = $getfit_json( 'elementor/footer.json' );
 $getfit_header_id = $getfit_upsert(
 	'elementor-hf',
 	'getfit-header',
-	'Get Fit Header',
+	'PersonalTrainer Header',
 	$getfit_header,
 	array(
 		'_elementor_template_type'     => 'wp-post',
@@ -97,7 +97,7 @@ $getfit_header_id = $getfit_upsert(
 $getfit_footer_id = $getfit_upsert(
 	'elementor-hf',
 	'getfit-footer',
-	'Get Fit Footer',
+	'PersonalTrainer Footer',
 	$getfit_footer,
 	array(
 		'_elementor_template_type'     => 'wp-post',

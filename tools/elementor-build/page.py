@@ -122,16 +122,16 @@ def studio():
 # ---------------------------------------------------------------- about
 def about():
     left = anim(con([
-        eyebrow('About Get Fit'),
+        eyebrow('About PersonalTrainer'),
         h2('Built by Oliver Virtanen, for people done with starting over.'),
-        lead('Oliver has coached in Helsinki for twelve years. He started Get Fit to give busy people what most gyms don’t: a real coach, a plan written for them and someone checking in every week.', margin=mt(24), maxw=520),
+        lead('Oliver has coached in Helsinki for twelve years. He started PersonalTrainer to give busy people what most gyms don’t: a real coach, a plan written for them and someone checking in every week.', margin=mt(24), maxw=520),
         lead('Today he leads a team of certified coaches in Kamppi and online — with the same no-shortcuts approach.', margin=mt(16), maxw=520),
         icon_list(['Certified Strength & Conditioning Specialist', 'Precision Nutrition Level 1', 'BSc Sports Science, University of Jyväskylä'],
                   SOFT, INK, 15, icon_size=11, cls='gf-checklist', margin=mt(32), extra={'icon_typography_font_weight': '600'}),
         button('Explore our plans →', '#pricing', 'primary', 'md', margin=mt(40)),
     ]))
     quote = con([
-        text('<p>“I’d tried three gyms before Get Fit. Oliver’s team was the first to make it feel personal — and the first that stuck.”</p>',
+        text('<p>“I’d tried three gyms before PersonalTrainer. Oliver’s team was the first to make it feel personal — and the first that stuck.”</p>',
              WHITE, typo('Hanken Grotesk', 17, 400, 1.6)),
         author('AL', 'Aino Laine', 'Client since 2024 · Helsinki'),
     ], {'padding': dims(22, 24), 'border_radius': dims(20)}, cls='gf-quote-card')
@@ -156,7 +156,7 @@ def problems():
                  text('<p>' + d + '</p>', MUTED, gtypo('gfbody'), margin=mt(6))], {'width': px(0)}, cls='gf-grow'),
         ], {'flex_gap': gap(20), 'flex_wrap': 'nowrap', 'flex_align_items': 'flex-start', 'padding': dims(26, 28), 'border_radius': dims(20)},
             cls='gf-glass gf-glass--hover'), i * 120))
-    cards.append(anim(heading('Get Fit fixes all three. <a href="#method">Here’s how ↓</a>', 'div', WHITE,
+    cards.append(anim(heading('PersonalTrainer fixes all three. <a href="#method">Here’s how ↓</a>', 'div', WHITE,
                               typo('Archivo', 24, 800, 1.3, -0.02), cls='gf-fixes', margin=dims(14, 4, 0, 4)), 360))
     left = anim(con([eyebrow('01 · Sound familiar?'), h2('You’ve started before. Here’s why it didn’t stick.'),
                      lead('Most people don’t fail for lack of willpower. They fail because the plan was never built for them.', margin=mt(24), maxw=460)]))
@@ -183,7 +183,7 @@ def method():
                  {'_element_width': 'initial', '_element_custom_width': px(260)}),
         ], {'flex_align_items': 'center'}, cls='gf-step' + (' is-active' if i == 0 else ''), title='Step %d' % (i + 1)))
     head = anim(row([
-        con([eyebrow('02 · The Get Fit method'),
+        con([eyebrow('02 · The PersonalTrainer method'),
              h2('A coach, a plan and a check-in <span class="gf-lime">every week.</span>', maxw=620)], cls='gf-grow-auto'),
         text('<p>One coach walks with you from your free trial to results that last.</p>', MUTED, typo('Hanken Grotesk', 17, 400, 1.6),
              extra={'_element_width': 'initial', '_element_custom_width': px(420)}),
@@ -289,7 +289,7 @@ def coaches():
         ], {'flex_align_items': 'center'}, title=name), i * 100))
     return section([
         anim(con([eyebrow('05 · Your coaches', 'center'), h2('Experts who care whether you show up.', 'center'),
-                  lead('Every Get Fit coach is certified, insured and has at least five years of hands-on coaching.', 'center', mt(20), 560)],
+                  lead('Every PersonalTrainer coach is certified, insured and has at least five years of hands-on coaching.', 'center', mt(20), 560)],
                  {'flex_align_items': 'center'}, cls='gf-head')),
         grid(items, 4, (32, 32), 2, 1, {'margin': mt_dims(64)}),
     ], sid='coaches', title='Coaches', pad=(40, 32, 140, 32), cls='gf-glow gf-glow--teal-right')
@@ -351,7 +351,7 @@ def booking():
         ], {'flex_align_items': 'center', 'flex_gap': gap(14), 'padding': dims(12, 0), 'flex_wrap': 'nowrap'},
             cls='gf-bstep' + (' is-current' if i == 0 else ''), title='Step %d' % (i + 1)))
     left = con(steps + [
-        text('<p>Get Fit Studio<br>Urho Kekkosen katu 1, 00100 Helsinki</p>', MUTED, typo('Hanken Grotesk', 14, 400, 1.7), cls='gf-baddr'),
+        text('<p>PersonalTrainer Studio<br>Urho Kekkosen katu 1, 00100 Helsinki</p>', MUTED, typo('Hanken Grotesk', 14, 400, 1.7), cls='gf-baddr'),
     ], {'padding': dims(20), 'flex_gap': gap(4), 'width': px(340), 'width_tablet': px(100, '%')}, cls='gf-bsteps', title='Steps')
 
     def pane_head(step, title):

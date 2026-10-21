@@ -213,8 +213,8 @@ FI = {
     # faq
     '08 · Questions': '08 · Kysymykset',
     'Still deciding? Good questions.': 'Vielä mietinnässä? Hyviä kysymyksiä.',
-    '<p>Anything else, email <a href="mailto:hello@getfit.fi">hello@getfit.fi</a>. We reply within one working day.</p>':
-        '<p>Muuta kysyttävää? Lähetä viesti osoitteeseen <a href="mailto:hello@getfit.fi">hello@getfit.fi</a>. Vastaamme yhden arkipäivän kuluessa.</p>',
+    '<p>Anything else, email <a href="mailto:hello@personaltrainer.fi">hello@personaltrainer.fi</a>. We reply within one working day.</p>':
+        '<p>Muuta kysyttävää? Lähetä viesti osoitteeseen <a href="mailto:hello@personaltrainer.fi">hello@personaltrainer.fi</a>. Vastaamme yhden arkipäivän kuluessa.</p>',
     'I’m a complete beginner. Is this for me?': 'Olen täysin aloittelija. Sopiiko tämä minulle?',
     'What happens in the free trial?': 'Mitä ilmaisessa kokeilussa tapahtuu?',
     'How does online coaching work?': 'Miten etävalmennus toimii?',

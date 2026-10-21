@@ -30,7 +30,7 @@ def tr(value):
 # Names, initials and logos that stay as they are.
 KEEP = {'+45 kg', '−14 kg', '−9 kg', 'AL', 'MH', 'DO', 'JK', 'EN', 'HS', 'Aino Laine', 'Mikko Heikkinen', 'Daniel Okafor', 'Jussi Korhonen', 'Emma Nieminen',
         'Helmi Salo', 'Mikael Koski', 'Sofia Halonen', 'Elias Nyström', 'Laura Heikkilä', 'Personal<span class="gf-lime">Trainer</span>',
-        '<p>PersonalTrainer Studio<br>Urho Kekkosen katu 1, 00100 Helsinki</p>', 'hello@getfit.fi', '+358 40 123 4567'}
+        '<p>PersonalTrainer Studio<br>Urho Kekkosen katu 1, 00100 Helsinki</p>', 'hello@personaltrainer.fi', '+358 40 123 4567'}
 
 
 def translate(elements):
